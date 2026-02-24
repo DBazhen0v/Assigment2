@@ -41,6 +41,30 @@ plt.grid(axis='y', alpha=0.75)
 
 plt.show()
 
+
+plt.figure(figsize=(10, 6))
+plt.scatter(df['Depth'], df['Magnitude'], alpha=0.5, c='darkred', edgecolors='white')
+
+plt.title("Зв'язок між глибиною епіцентру та магнітудою", fontsize=14)
+plt.xlabel("Глибина (км)", fontsize=12)
+plt.ylabel("Магнітуда", fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.6)
+
+plt.show()
+
+
+top_regions = region_counts.head(5)
+
+plt.figure(figsize=(10, 6))
+top_regions.plot(kind='bar', color='teal', edgecolor='black')
+
+plt.title("Топ-5 регіонів за кількістю землетрусів", fontsize=14)
+plt.xlabel("Регіон / Місце", fontsize=12)
+plt.ylabel("Кількість подій", fontsize=12)
+plt.xticks(rotation=45, ha='right')
+
+plt.tight_layout()
+plt.show()
 print(f"Максимальна магнітуда:{MAX}")
 print(f"Мінімальна магнітуда:{MIN}")
 print(f"Середня магнітуда:{avg}")
